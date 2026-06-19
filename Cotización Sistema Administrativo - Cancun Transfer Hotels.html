@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotización Sistema Administrativo — Mayan Transfer Experts</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:    #0057A8;
+      --blue-dk: #003d7a;
+      --teal:    #00A896;
+      --gray-50: #F8FAFC;
+      --gray-100:#F1F5F9;
+      --gray-200:#E2E8F0;
+      --gray-500:#64748B;
+      --gray-700:#334155;
+      --gray-900:#0F172A;
+      --green:   #16A34A;
+      --orange:  #EA580C;
+      --red:     #DC2626;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--gray-900);
+      background: #fff;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 32px;
+    }
+
+    /* ── Cover ── */
+    .cover {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dk) 60%, #001f3f 100%);
+      color: #fff;
+      padding: 52px 48px 44px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      right: -60px; bottom: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
+    }
+    .cover-badge {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .cover h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .cover h1 span { color: var(--teal); }
+    .cover .subtitle {
+      font-size: 15px;
+      opacity: .8;
+      margin-bottom: 32px;
+    }
+    .cover-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,.2);
+      padding-top: 20px;
+      font-size: 12px;
+      opacity: .85;
+    }
+    .cover-meta div { display: flex; flex-direction: column; gap: 2px; }
+    .cover-meta strong { font-size: 13px; opacity: 1; }
+
+    /* ── Section headers ── */
+    .section { margin-bottom: 36px; }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blue);
+      border-bottom: 3px solid var(--teal);
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title .num {
+      background: var(--blue);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-weight: 700;
+      color: var(--blue-dk);
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .card p { color: var(--gray-700); font-size: 12.5px; }
+
+    /* ── Tables ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-bottom: 16px;
+    }
+    thead tr {
+      background: var(--blue);
+      color: #fff;
+    }
+    thead th {
+      padding: 9px 12px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 11.5px;
+      letter-spacing: .03em;
+    }
+    tbody tr:nth-child(even) { background: var(--gray-50); }
+    tbody tr:hover { background: #EFF6FF; }
+    tbody td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      vertical-align: top;
+    }
+    tbody td:first-child { font-weight: 600; color: var(--gray-900); }
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+    .tag-green  { background:#DCFCE7; color: var(--green); }
+    .tag-blue   { background:#DBEAFE; color: var(--blue); }
+    .tag-orange { background:#FFEDD5; color: var(--orange); }
+    .tag-red    { background:#FEE2E2; color: var(--red); }
+    .tag-gray   { background:var(--gray-200); color: var(--gray-700); }
+
+    /* ── Phases ── */
+    .phase {
+      border-left: 4px solid var(--teal);
+      padding: 14px 18px;
+      background: var(--gray-50);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 12px;
+    }
+    .phase-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .phase-title { font-weight: 700; font-size: 13.5px; color: var(--blue-dk); }
+    .phase-weeks {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--teal);
+      background: #CCFBF1;
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+    .phase ul { list-style: none; }
+    .phase ul li {
+      padding: 2px 0;
+      color: var(--gray-700);
+      font-size: 12px;
+    }
+    .phase ul li::before { content: '\2713 '; color: var(--teal); font-weight: 700; }
+
+    /* ── Pricing highlight ── */
+    .price-box {
+      border: 2px solid var(--blue);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .price-box-header {
+      background: var(--blue);
+      color: #fff;
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .price-box-body { padding: 0; }
+    .price-total-row td {
+      background: #EFF6FF !important;
+      font-weight: 700 !important;
+      color: var(--blue) !important;
+      font-size: 13.5px !important;
+      border-top: 2px solid var(--blue) !important;
+    }
+
+    /* ── Summary boxes ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .summary-box {
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .summary-box .amount {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1.2;
+    }
+    .summary-box .label {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 4px;
+    }
+    .summary-box.highlight {
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+    .summary-box.highlight .amount,
+    .summary-box.highlight .label { color: #fff; }
+
+    /* ── Note / callout ── */
+    .note {
+      background: #FFF7ED;
+      border-left: 4px solid var(--orange);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--gray-700);
+      margin-bottom: 16px;
+    }
+    .note strong { color: var(--orange); }
+
+    .info {
+      background: #EFF6FF;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--gray-700);
+      margin-bottom: 16px;
+    }
+    .info strong { color: var(--blue); }
+
+    .success {
+      background: #F0FDF4;
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--gray-700);
+      margin-bottom: 16px;
+    }
+    .success strong { color: var(--green); }
+
+    /* ── Code / monospace ── */
+    .mono {
+      font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 11.5px;
+      line-height: 1.7;
+      color: var(--gray-900);
+      margin-bottom: 16px;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    /* ── Footer ── */
+    .doc-footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 2px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--gray-500);
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { padding: 0; font-size: 11.5px; }
+      .cover { border-radius: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .section { page-break-inside: avoid; }
+      .phase { page-break-inside: avoid; }
+      table { page-break-inside: avoid; }
+      .summary-grid { page-break-inside: avoid; }
+      thead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .tag, .phase, .card, .price-box-header, .summary-box.highlight {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       PORTADA
+  ══════════════════════════════════════════ -->
+  <div class="cover">
+    <div class="cover-badge">Propuesta Complementaria &mdash; Sistema Administrativo</div>
+    <h1>Mayan Transfer <span>Experts</span></h1>
+    <p class="subtitle">Sistema Administrativo &mdash; Plataforma de Gesti&oacute;n para Transportadora Tur&iacute;stica</p>
+    <div class="cover-meta">
+      <div><span>Fecha</span><strong>17 de junio de 2026</strong></div>
+      <div><span>Elaborado por</span><strong>Eduardo Baas Kauil</strong></div>
+      <div><span>Versi&oacute;n</span><strong>1.0</strong></div>
+      <div><span>Tipo de proyecto</span><strong>Panel Administrativo Full-Stack</strong></div>
+      <div><span>Complementa</span><strong>Cotizaci&oacute;n Sitio Web ($30,000 MXN)</strong></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       1. RESUMEN EJECUTIVO
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">1</span> Resumen Ejecutivo</h2>
+    <p style="color:var(--gray-700); margin-bottom:14px;">
+      Se propone el desarrollo del <strong>sistema administrativo completo</strong> para <strong>Mayan Transfer Experts</strong>.
+      Esta propuesta <strong>complementa</strong> la cotizaci&oacute;n del sitio web p&uacute;blico ($30,000 MXN) y cubre el panel
+      de gesti&oacute;n desde el cual se administrar&aacute;n reservas, clientes, veh&iacute;culos, rutas, tarifas, contenido del sitio,
+      pagos, comunicaciones (email y WhatsApp), CRM, reportes y futuras automatizaciones.
+      El sistema contar&aacute; con <strong>24 m&oacute;dulos</strong> organizados en 7 fases de desarrollo.
+    </p>
+    <div class="summary-grid">
+      <div class="summary-box">
+        <div class="amount">20&ndash;24 sem.</div>
+        <div class="label">Duraci&oacute;n estimada</div>
+      </div>
+      <div class="summary-box">
+        <div class="amount">24 m&oacute;dulos</div>
+        <div class="label">M&oacute;dulos del sistema</div>
+      </div>
+      <div class="summary-box highlight">
+        <div class="amount">$30,000 MXN</div>
+        <div class="label">Inversi&oacute;n de desarrollo (precio fijo)</div>
+      </div>
+    </div>
+    <div class="info">
+      <strong>Relaci&oacute;n con la cotizaci&oacute;n anterior:</strong> El sitio web p&uacute;blico (reservas y pagos del cliente final)
+      se cotiz&oacute; en <strong>$30,000 MXN</strong>. Este documento cubre exclusivamente el <strong>panel administrativo</strong>.
+      Ambos proyectos comparten el mismo backend (NestJS) y base de datos (MySQL), lo cual reduce costos de infraestructura.
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       2. STACK TECNOL&Oacute;GICO
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">2</span> Stack Tecnol&oacute;gico</h2>
+
+    <div class="card">
+      <div class="card-title">Frontend &mdash; Panel Administrativo</div>
+      <table>
+        <thead><tr><th>Tecnolog&iacute;a</th><th>Versi&oacute;n</th><th>Prop&oacute;sito</th></tr></thead>
+        <tbody>
+          <tr><td>React + Vite</td><td>^19 / ^6</td><td>SPA r&aacute;pida para panel de administraci&oacute;n</td></tr>
+          <tr><td>TypeScript</td><td>^5.5</td><td>Tipado estricto en todos los formularios y tablas</td></tr>
+          <tr><td>React Router</td><td>^7</td><td>Navegaci&oacute;n SPA con rutas protegidas por rol</td></tr>
+          <tr><td>TanStack Query</td><td>^5</td><td>Cache, paginaci&oacute;n y sincronizaci&oacute;n de datos</td></tr>
+          <tr><td>React Hook Form + Zod</td><td>latest</td><td>Formularios complejos con validaci&oacute;n robusta</td></tr>
+          <tr><td>TailwindCSS</td><td>^4</td><td>Estilos utilitarios y componentes del panel</td></tr>
+          <tr><td>TanStack Table</td><td>^8</td><td>Tablas con ordenamiento, filtros, paginaci&oacute;n y export</td></tr>
+          <tr><td>FullCalendar</td><td>^6</td><td>Calendario de reservas (mensual, semanal, diario)</td></tr>
+          <tr><td>i18next</td><td>latest</td><td>Internacionalizaci&oacute;n ES / EN</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Backend &mdash; API REST</div>
+      <table>
+        <thead><tr><th>Tecnolog&iacute;a</th><th>Versi&oacute;n</th><th>Prop&oacute;sito</th></tr></thead>
+        <tbody>
+          <tr><td>NestJS + TypeScript</td><td>^11</td><td>Framework modular con guards, interceptors y pipes</td></tr>
+          <tr><td>Prisma ORM</td><td>^6</td><td>ORM tipado con migraciones declarativas</td></tr>
+          <tr><td>MySQL</td><td>^8.0</td><td>Base de datos relacional compartida con sitio web</td></tr>
+          <tr><td>JWT + Passport</td><td>latest</td><td>Autenticaci&oacute;n con access + refresh tokens</td></tr>
+          <tr><td>Swagger / OpenAPI</td><td>latest</td><td>Documentaci&oacute;n autom&aacute;tica de la API</td></tr>
+          <tr><td>Resend / SMTP</td><td>latest</td><td>Env&iacute;o de correos transaccionales y plantillas</td></tr>
+          <tr><td>WhatsApp Business API</td><td>latest</td><td>Mensajer&iacute;a, confirmaciones y recordatorios</td></tr>
+          <tr><td>PDFKit / Puppeteer</td><td>latest</td><td>Generaci&oacute;n de tickets y reportes en PDF</td></tr>
+          <tr><td>ExcelJS</td><td>latest</td><td>Exportaci&oacute;n de reportes a Excel</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Infraestructura</div>
+      <table>
+        <thead><tr><th>Tecnolog&iacute;a</th><th>Prop&oacute;sito</th></tr></thead>
+        <tbody>
+          <tr><td>Docker + Docker Compose</td><td>Contenedores para desarrollo y producci&oacute;n</td></tr>
+          <tr><td>Ubuntu Server (VPS)</td><td>Mismo VPS del sitio web p&uacute;blico</td></tr>
+          <tr><td>Nginx</td><td>Reverse proxy y servir archivos est&aacute;ticos</td></tr>
+          <tr><td>PM2</td><td>Process manager para NestJS en producci&oacute;n</td></tr>
+          <tr><td>GitHub Actions</td><td>CI/CD autom&aacute;tico en push a main</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       3. M&Oacute;DULOS DEL SISTEMA
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">3</span> M&oacute;dulos del Sistema (24 m&oacute;dulos)</h2>
+
+    <div class="card">
+      <div class="card-title">Core del Sistema</div>
+      <table>
+        <thead><tr><th>#</th><th>M&oacute;dulo</th><th>Descripci&oacute;n</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Autenticaci&oacute;n y Roles</td><td>Login, logout, recuperar contrase&ntilde;a, JWT + refresh token, roles (Admin, Operador)</td><td><span class="tag tag-red">Cr&iacute;tica</span></td></tr>
+          <tr><td>2</td><td>Dashboard</td><td>Calendario FullCalendar (3 vistas), 7 indicadores KPI, acciones r&aacute;pidas</td><td><span class="tag tag-red">Cr&iacute;tica</span></td></tr>
+          <tr><td>3</td><td>Buscador Global</td><td>B&uacute;squeda por folio, cliente, correo, tel&eacute;fono, hotel, fecha, veh&iacute;culo</td><td><span class="tag tag-red">Cr&iacute;tica</span></td></tr>
+          <tr><td>4</td><td>Seguridad</td><td>Permisos granulares, auditor&iacute;a, logs de actividad, backups</td><td><span class="tag tag-red">Cr&iacute;tica</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Gesti&oacute;n de Reservas</div>
+      <table>
+        <thead><tr><th>#</th><th>M&oacute;dulo</th><th>Descripci&oacute;n</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>Reservas &mdash; CRUD</td><td>Formulario completo: cliente, viaje, pasajeros, veh&iacute;culo, ubicaciones, vuelo, estados (7 estados)</td><td><span class="tag tag-red">Cr&iacute;tica</span></td></tr>
+          <tr><td>6</td><td>Acciones sobre Reservas</td><td>Crear, editar, duplicar, confirmar, cancelar, reprogramar, imprimir, generar PDF, enviar correo/WhatsApp</td><td><span class="tag tag-red">Cr&iacute;tica</span></td></tr>
+          <tr><td>7</td><td>Historial de Actividad</td><td>Log por reserva: fecha, hora, usuario, acci&oacute;n (creada, modificada, pago, correo, etc.)</td><td><span class="tag tag-red">Cr&iacute;tica</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cat&aacute;logos</div>
+      <table>
+        <thead><tr><th>#</th><th>M&oacute;dulo</th><th>Descripci&oacute;n</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr><td>8</td><td>Viajeros / Clientes</td><td>CRUD + historial de reservas, cantidad de viajes, &uacute;ltima reserva, total gastado</td><td><span class="tag tag-red">Alta</span></td></tr>
+          <tr><td>9</td><td>Veh&iacute;culos</td><td>CRUD: nombre, tipo, capacidad, equipaje, imagen, descripci&oacute;n, estado</td><td><span class="tag tag-red">Alta</span></td></tr>
+          <tr><td>10</td><td>Conductores</td><td>CRUD: nombre, tel&eacute;fono, licencia, veh&iacute;culo asignado, estado</td><td><span class="tag tag-blue">Media</span></td></tr>
+          <tr><td>11</td><td>Tarifas</td><td>CRUD dependiente de origen, destino, veh&iacute;culo, temporada, moneda. Precio normal y promocional</td><td><span class="tag tag-red">Alta</span></td></tr>
+          <tr><td>12</td><td>Destinos y Zonas</td><td>CRUD: Canc&uacute;n Airport, Zona Hotelera, Playa del Carmen, Tulum, etc.</td><td><span class="tag tag-red">Alta</span></td></tr>
+          <tr><td>13</td><td>Hoteles</td><td>CRUD: nombre, zona, direcci&oacute;n, coordenadas, imagen, estado</td><td><span class="tag tag-red">Alta</span></td></tr>
+          <tr><td>14</td><td>Extras</td><td>CRUD: silla para beb&eacute;, bebidas, decoraciones, paradas adicionales</td><td><span class="tag tag-blue">Media</span></td></tr>
+          <tr><td>15</td><td>Cupones</td><td>CRUD: c&oacute;digo, tipo descuento, porcentaje/monto fijo, fechas, l&iacute;mite de usos</td><td><span class="tag tag-blue">Media</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Contenido y Medios</div>
+      <table>
+        <thead><tr><th>#</th><th>M&oacute;dulo</th><th>Descripci&oacute;n</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr><td>16</td><td>CMS</td><td>Administrar: Inicio, Nosotros, Servicios, FAQ, Contacto, Pol&iacute;ticas, T&eacute;rminos, Privacidad, Cookies, Promociones, Banner, SEO</td><td><span class="tag tag-red">Alta</span></td></tr>
+          <tr><td>17</td><td>Galer&iacute;a</td><td>Upload, editar, eliminar, clasificar por categor&iacute;as, optimizar im&aacute;genes</td><td><span class="tag tag-blue">Media</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Comunicaciones e Integraciones</div>
+      <table>
+        <thead><tr><th>#</th><th>M&oacute;dulo</th><th>Descripci&oacute;n</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr><td>18</td><td>Correos Electr&oacute;nicos</td><td>Sistema de plantillas: confirmaci&oacute;n, pago, cancelaci&oacute;n, recordatorio, post-viaje. Env&iacute;o manual y autom&aacute;tico</td><td><span class="tag tag-red">Alta</span></td></tr>
+          <tr><td>19</td><td>Automatizaciones</td><td>Motor de reglas: correo al crear reserva, al confirmar pago, recordatorio 24h/2h antes, post-viaje</td><td><span class="tag tag-orange">Media-Alta</span></td></tr>
+          <tr><td>20</td><td>Integraci&oacute;n WhatsApp</td><td>Env&iacute;o de mensajes, confirmaciones, recordatorios, compartir ticket/PDF/ubicaci&oacute;n, historial</td><td><span class="tag tag-orange">Media-Alta</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">CRM, Reportes y Configuraci&oacute;n</div>
+      <table>
+        <thead><tr><th>#</th><th>M&oacute;dulo</th><th>Descripci&oacute;n</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr><td>21</td><td>CRM</td><td>Estados (Prospecto, Cliente, Frecuente, VIP), etiquetas, notas, seguimientos, frecuencia de compra</td><td><span class="tag tag-orange">Media-Alta</span></td></tr>
+          <tr><td>22</td><td>Reportes</td><td>Reservas diarias/mensuales, ingresos, cancelaciones, veh&iacute;culos/hoteles top, clientes frecuentes. Export Excel y PDF</td><td><span class="tag tag-red">Alta</span></td></tr>
+          <tr><td>23</td><td>Configuraci&oacute;n General</td><td>Datos empresa, logo, redes sociales, Stripe, PayPal, SMTP, WhatsApp, idiomas, monedas, tipo de cambio</td><td><span class="tag tag-blue">Media</span></td></tr>
+          <tr><td>24</td><td>Internacionalizaci&oacute;n</td><td>Todo el panel en Espa&ntilde;ol e Ingl&eacute;s (i18next)</td><td><span class="tag tag-blue">Media</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       4. ARQUITECTURA
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">4</span> Arquitectura del Sistema</h2>
+
+    <div class="mono">Frontend Admin (React + Vite)      Frontend P&uacute;blico (React + Vite)
+         &boxv;                                   &boxv;
+         &boxur;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh; REST API &boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxh;&boxul;
+                      &boxv;
+              Backend (NestJS)
+              &boxv;            &boxv;
+         Prisma ORM    Servicios externos
+              &boxv;            &boxv;
+            MySQL      Stripe &bull; PayPal
+                       SMTP &bull; WhatsApp API</div>
+
+    <div class="info">
+      <strong>Infraestructura compartida:</strong> El panel administrativo se despliega en el <strong>mismo VPS</strong>
+      que el sitio web p&uacute;blico. El backend NestJS es compartido &mdash; los m&oacute;dulos del admin se protegen
+      con guards JWT y verificaci&oacute;n de roles. No se requiere infraestructura adicional.
+    </div>
+
+    <div class="card">
+      <div class="card-title">Estructura del proyecto</div>
+      <div class="mono">cancun-transfer-admin/              &larr; Repositorio Frontend Admin
+&boxv;&boxh;&boxh; src/
+&boxv;   &boxvr;&boxh;&boxh; pages/         &rarr; Dashboard, Reservas, Clientes, Reportes&hellip;
+&boxv;   &boxvr;&boxh;&boxh; components/    &rarr; DataTable, Forms, Modals, Calendar&hellip;
+&boxv;   &boxvr;&boxh;&boxh; hooks/         &rarr; useReservations, useClients, useAuth&hellip;
+&boxv;   &boxvr;&boxh;&boxh; services/      &rarr; API clients (TanStack Query)
+&boxv;   &boxur;&boxh;&boxh; i18n/          &rarr; locales ES / EN
+&boxur;&boxh;&boxh; vite.config.ts
+
+cancun-transfer-api/                &larr; Repositorio Backend (compartido)
+&boxvr;&boxh;&boxh; src/
+&boxv;   &boxvr;&boxh;&boxh; auth/          &rarr; JWT, refresh, guards, roles
+&boxv;   &boxvr;&boxh;&boxh; bookings/      &rarr; CRUD reservas + m&aacute;quina de estados
+&boxv;   &boxvr;&boxh;&boxh; clients/       &rarr; Viajeros + CRM
+&boxv;   &boxvr;&boxh;&boxh; vehicles/      &rarr; Veh&iacute;culos + conductores
+&boxv;   &boxvr;&boxh;&boxh; catalog/       &rarr; Tarifas, destinos, hoteles, extras, cupones
+&boxv;   &boxvr;&boxh;&boxh; cms/           &rarr; Contenido del sitio + galer&iacute;a
+&boxv;   &boxvr;&boxh;&boxh; communications/&rarr; Email + WhatsApp + automatizaciones
+&boxv;   &boxvr;&boxh;&boxh; reports/       &rarr; Reportes + exportaci&oacute;n
+&boxv;   &boxvr;&boxh;&boxh; config/        &rarr; Configuraci&oacute;n general
+&boxv;   &boxur;&boxh;&boxh; common/        &rarr; Guards, pipes, interceptors, utils
+&boxvr;&boxh;&boxh; prisma/
+&boxv;   &boxur;&boxh;&boxh; schema.prisma  &rarr; ~25 modelos
+&boxur;&boxh;&boxh; docker-compose.yml</div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       5. FASES DE IMPLEMENTACI&Oacute;N
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">5</span> Fases de Implementaci&oacute;n</h2>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-title">Fase 1 &mdash; Fundaci&oacute;n y Autenticaci&oacute;n</span>
+        <span class="phase-weeks">Semanas 1&ndash;2</span>
+      </div>
+      <ul>
+        <li>Setup del proyecto admin: React + Vite + TailwindCSS + TanStack</li>
+        <li>Extensi&oacute;n del backend: Prisma ORM (migraci&oacute;n desde TypeORM), Docker Compose</li>
+        <li>Sistema de autenticaci&oacute;n completo: login, logout, recuperar contrase&ntilde;a, JWT + refresh token</li>
+        <li>Roles y permisos: Admin y Operador (extensible a futuro)</li>
+        <li>Layout del panel: sidebar, header, navegaci&oacute;n, tema</li>
+        <li>Guards de ruta y middleware de autorizaci&oacute;n</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-title">Fase 2 &mdash; Dashboard y Reservas</span>
+        <span class="phase-weeks">Semanas 3&ndash;7</span>
+      </div>
+      <ul>
+        <li>Dashboard: FullCalendar con vistas mensual, semanal y diaria</li>
+        <li>7 indicadores KPI: nuevas, pendientes, confirmadas, pr&oacute;ximas, actuales, finalizadas, canceladas</li>
+        <li>Acciones r&aacute;pidas: nueva reserva, buscar, clientes, veh&iacute;culos, calendario</li>
+        <li>CRUD completo de reservas: formulario multi-secci&oacute;n (cliente, viaje, pasajeros, veh&iacute;culo, ubicaciones, vuelo)</li>
+        <li>M&aacute;quina de estados de reserva (7 estados con transiciones validadas)</li>
+        <li>Acciones: duplicar, confirmar, cancelar, reprogramar, imprimir, generar ticket PDF</li>
+        <li>Historial de actividad por reserva (log autom&aacute;tico de cada acci&oacute;n)</li>
+        <li>Buscador global multi-entidad</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-title">Fase 3 &mdash; Cat&aacute;logos</span>
+        <span class="phase-weeks">Semanas 8&ndash;11</span>
+      </div>
+      <ul>
+        <li>Viajeros / Clientes: CRUD + historial de reservas + m&eacute;tricas (viajes, gasto total)</li>
+        <li>Veh&iacute;culos: CRUD con gesti&oacute;n de im&aacute;genes</li>
+        <li>Conductores: CRUD con asignaci&oacute;n de veh&iacute;culo</li>
+        <li>Tarifas: CRUD con dependencias m&uacute;ltiples (origen &times; destino &times; veh&iacute;culo &times; temporada &times; moneda)</li>
+        <li>Destinos y Zonas: CRUD con im&aacute;genes</li>
+        <li>Hoteles: CRUD con coordenadas geogr&aacute;ficas</li>
+        <li>Extras: CRUD (silla beb&eacute;, bebidas, decoraciones, paradas)</li>
+        <li>Cupones: CRUD con validaci&oacute;n de fechas, l&iacute;mites y tipos de descuento</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-title">Fase 4 &mdash; CMS, Galer&iacute;a y Reportes</span>
+        <span class="phase-weeks">Semanas 12&ndash;14</span>
+      </div>
+      <ul>
+        <li>CMS: editor de contenido para 10+ secciones del sitio web</li>
+        <li>Administraci&oacute;n de banner principal, botones, SEO (meta tags, Open Graph)</li>
+        <li>Galer&iacute;a: upload, edici&oacute;n, categorizaci&oacute;n y optimizaci&oacute;n autom&aacute;tica de im&aacute;genes</li>
+        <li>Reportes: reservas diarias/mensuales, ingresos, cancelaciones</li>
+        <li>Reportes avanzados: veh&iacute;culos m&aacute;s usados, hoteles top, clientes frecuentes</li>
+        <li>Exportaci&oacute;n a Excel (ExcelJS) y PDF (PDFKit)</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-title">Fase 5 &mdash; Comunicaciones e Integraciones</span>
+        <span class="phase-weeks">Semanas 15&ndash;18</span>
+      </div>
+      <ul>
+        <li>Sistema de plantillas de correo: confirmaci&oacute;n, pago, cancelaci&oacute;n, recordatorio, post-viaje</li>
+        <li>Editor visual de plantillas con variables din&aacute;micas ({nombre}, {folio}, {fecha})</li>
+        <li>Motor de automatizaciones: triggers configurables (crear reserva, confirmar pago, 24h/2h antes, post-viaje)</li>
+        <li>Integraci&oacute;n WhatsApp Business API: env&iacute;o de mensajes, confirmaciones, recordatorios</li>
+        <li>Compartir ticket PDF y ubicaci&oacute;n por WhatsApp</li>
+        <li>Historial de comunicaciones por reserva</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-title">Fase 6 &mdash; CRM y Configuraci&oacute;n</span>
+        <span class="phase-weeks">Semanas 19&ndash;21</span>
+      </div>
+      <ul>
+        <li>CRM: estados de cliente (Prospecto, Cliente, Frecuente, VIP)</li>
+        <li>Etiquetas, notas internas y seguimientos por cliente</li>
+        <li>M&eacute;tricas: frecuencia de compra, total gastado, &uacute;ltima reserva</li>
+        <li>Configuraci&oacute;n general: datos de empresa, logo, redes sociales</li>
+        <li>Configuraci&oacute;n de integraciones: Stripe, PayPal, SMTP, WhatsApp</li>
+        <li>Configuraci&oacute;n de idiomas, monedas y tipo de cambio</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-header">
+        <span class="phase-title">Fase 7 &mdash; Seguridad, i18n y Deploy</span>
+        <span class="phase-weeks">Semanas 22&ndash;24</span>
+      </div>
+      <ul>
+        <li>Permisos granulares por m&oacute;dulo y acci&oacute;n</li>
+        <li>Auditor&iacute;a: logs de actividad del sistema</li>
+        <li>Sistema de backups autom&aacute;ticos de base de datos</li>
+        <li>Internacionalizaci&oacute;n completa del panel (ES / EN)</li>
+        <li>Documentaci&oacute;n API con Swagger / OpenAPI</li>
+        <li>Docker: contenedores para desarrollo y producci&oacute;n</li>
+        <li>Deploy en VPS Ubuntu + Nginx + PM2 + SSL</li>
+        <li>Pruebas integrales, QA responsivo (Desktop + Tablet) y entrega</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       6. COTIZACI&Oacute;N DE DESARROLLO
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">6</span> Cotizaci&oacute;n de Desarrollo</h2>
+
+    <div class="note">
+      <strong>Precio fijo:</strong> El costo de desarrollo del sistema administrativo es de
+      <strong>$30,000 MXN</strong> (equivalente a ~$1,765 USD al tipo de cambio de $17 MXN/USD).
+      El desglose de horas se presenta como referencia del trabajo involucrado.
+    </div>
+
+    <div class="price-box">
+      <div class="price-box-header">Desglose de horas por m&oacute;dulo</div>
+      <div class="price-box-body">
+        <table>
+          <thead><tr><th>M&oacute;dulo / Actividad</th><th>Horas estimadas</th></tr></thead>
+          <tbody>
+            <tr><td>Setup del proyecto admin (React + Vite + Prisma + Docker)</td><td>16 hrs</td></tr>
+            <tr><td>Autenticaci&oacute;n y Roles (JWT, refresh, recuperaci&oacute;n, guards)</td><td>28 hrs</td></tr>
+            <tr><td>Dashboard (FullCalendar, KPIs, acciones r&aacute;pidas)</td><td>36 hrs</td></tr>
+            <tr><td>Gesti&oacute;n de Reservas &mdash; CRUD completo</td><td>56 hrs</td></tr>
+            <tr><td>Acciones sobre Reservas (duplicar, PDF, reprogramar, etc.)</td><td>36 hrs</td></tr>
+            <tr><td>Historial de Actividad</td><td>14 hrs</td></tr>
+            <tr><td>Viajeros / Clientes (CRUD + historial + m&eacute;tricas)</td><td>22 hrs</td></tr>
+            <tr><td>Veh&iacute;culos (CRUD + im&aacute;genes)</td><td>14 hrs</td></tr>
+            <tr><td>Conductores (CRUD)</td><td>10 hrs</td></tr>
+            <tr><td>Tarifas (CRUD con dependencias m&uacute;ltiples)</td><td>22 hrs</td></tr>
+            <tr><td>Destinos y Zonas (CRUD)</td><td>10 hrs</td></tr>
+            <tr><td>Hoteles (CRUD + coordenadas)</td><td>14 hrs</td></tr>
+            <tr><td>Extras (CRUD)</td><td>8 hrs</td></tr>
+            <tr><td>Cupones (CRUD + validaci&oacute;n)</td><td>14 hrs</td></tr>
+            <tr><td>CMS (10+ secciones, SEO, banners)</td><td>44 hrs</td></tr>
+            <tr><td>Galer&iacute;a (upload, categor&iacute;as, optimizaci&oacute;n)</td><td>18 hrs</td></tr>
+            <tr><td>Sistema de Correos (plantillas + env&iacute;o)</td><td>28 hrs</td></tr>
+            <tr><td>Automatizaciones (motor de reglas y triggers)</td><td>28 hrs</td></tr>
+            <tr><td>Integraci&oacute;n WhatsApp (API, mensajes, historial)</td><td>36 hrs</td></tr>
+            <tr><td>CRM (estados, etiquetas, seguimientos)</td><td>28 hrs</td></tr>
+            <tr><td>Buscador Global (multi-entidad)</td><td>14 hrs</td></tr>
+            <tr><td>Reportes (gr&aacute;ficas + export Excel/PDF)</td><td>28 hrs</td></tr>
+            <tr><td>Configuraci&oacute;n General (empresa + integraciones)</td><td>22 hrs</td></tr>
+            <tr><td>Seguridad (permisos, auditor&iacute;a, logs, backups)</td><td>20 hrs</td></tr>
+            <tr><td>Internacionalizaci&oacute;n ES / EN</td><td>14 hrs</td></tr>
+            <tr><td>Documentaci&oacute;n API (Swagger / OpenAPI)</td><td>8 hrs</td></tr>
+            <tr><td>Docker + Deploy VPS Ubuntu</td><td>14 hrs</td></tr>
+            <tr><td>Testing, QA responsivo y ajustes finales</td><td>22 hrs</td></tr>
+            <tr class="price-total-row">
+              <td>TOTAL DE HORAS</td>
+              <td>~640 hrs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="border-left: 4px solid var(--teal);">
+      <div class="card-title" style="color:var(--teal); font-size:15px;">
+        Precio del Sistema Administrativo
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:10px;">
+        <div>
+          <div style="font-size:11px; color:var(--gray-500); margin-bottom:4px;">PRECIO TOTAL (precio fijo)</div>
+          <div style="font-size:34px; font-weight:800; color:var(--blue);">$30,000 MXN</div>
+          <div style="font-size:11.5px; color:var(--gray-700);">Incluye: 24 m&oacute;dulos, autenticaci&oacute;n, dashboard, reservas, CRM, CMS, reportes, email, WhatsApp, automatizaciones, Docker y deploy.</div>
+        </div>
+        <div>
+          <div style="font-size:11px; color:var(--gray-500); margin-bottom:4px;">EQUIVALENTE EN USD (ref. $17 MXN/USD)</div>
+          <div style="font-size:34px; font-weight:800; color:var(--teal);">~$1,765 USD</div>
+          <div style="font-size:11.5px; color:var(--gray-700);">Referencia para el cliente internacional. El monto acordado y facturado es en pesos mexicanos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <strong>Esquema de pagos sugerido (4 hitos):</strong><br/>
+      <strong>20%</strong> al firmar &mdash; <strong>$6,000 MXN</strong> &rarr;
+      <strong>25%</strong> al entregar Auth + Dashboard + Reservas &mdash; <strong>$7,500 MXN</strong> &rarr;
+      <strong>25%</strong> al entregar Cat&aacute;logos + CMS + Comunicaciones &mdash; <strong>$7,500 MXN</strong> &rarr;
+      <strong>30%</strong> al entregar en producci&oacute;n &mdash; <strong>$9,000 MXN</strong>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       7. COSTOS ADICIONALES DE INFRAESTRUCTURA
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">7</span> Costos Adicionales de Infraestructura</h2>
+
+    <div class="success">
+      <strong>Infraestructura compartida:</strong> El sistema administrativo se despliega en el mismo VPS
+      que el sitio web p&uacute;blico. No se requiere servidor adicional. Los &uacute;nicos costos nuevos son los servicios
+      de terceros para las integraciones.
+    </div>
+
+    <div class="price-box">
+      <div class="price-box-header">Costos mensuales adicionales por integraciones (USD)</div>
+      <div class="price-box-body">
+        <table>
+          <thead><tr><th>Servicio</th><th>Plan</th><th>USD/mes</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>WhatsApp Business API</td>
+              <td>Meta / Proveedor BSP</td>
+              <td>$0&ndash;15</td>
+              <td>Primeras 1,000 conversaciones/mes gratis (Meta). BSP como 360dialog ~$5&ndash;15/mes</td>
+            </tr>
+            <tr>
+              <td>SMTP (email avanzado)</td>
+              <td>Resend Pro (opcional)</td>
+              <td>$0&ndash;20</td>
+              <td>Free tier: 3,000 emails/mes. Pro: $20/mes por 50,000 emails</td>
+            </tr>
+            <tr>
+              <td>Almacenamiento de im&aacute;genes</td>
+              <td>Mismo VPS</td>
+              <td>$0</td>
+              <td>Las im&aacute;genes de galer&iacute;a y CMS se almacenan en el VPS existente</td>
+            </tr>
+            <tr class="price-total-row">
+              <td colspan="2">COSTO MENSUAL ADICIONAL</td>
+              <td>$0&ndash;35 USD</td>
+              <td>~$0&ndash;$595 MXN/mes seg&uacute;n volumen de uso</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       8. RESUMEN TOTAL DE INVERSI&Oacute;N
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">8</span> Resumen Total de Inversi&oacute;n (Sitio Web + Admin)</h2>
+
+    <div class="price-box">
+      <div class="price-box-header">Inversi&oacute;n total del proyecto completo</div>
+      <div class="price-box-body">
+        <table>
+          <thead><tr><th>Concepto</th><th>Tipo</th><th>MXN</th><th>USD aprox.</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Sitio Web P&uacute;blico (cotizaci&oacute;n anterior)</td>
+              <td><span class="tag tag-green">Aprobado</span></td>
+              <td>$30,000</td>
+              <td>~$1,765</td>
+            </tr>
+            <tr>
+              <td>Sistema Administrativo (esta cotizaci&oacute;n)</td>
+              <td><span class="tag tag-blue">Nuevo</span></td>
+              <td>$30,000</td>
+              <td>~$1,765</td>
+            </tr>
+            <tr>
+              <td>VPS + Dominio (primer a&ntilde;o)</td>
+              <td><span class="tag tag-orange">Recurrente</span></td>
+              <td>~$2,040&ndash;$2,856</td>
+              <td>~$120&ndash;$168</td>
+            </tr>
+            <tr>
+              <td>Integraciones: WhatsApp + SMTP (primer a&ntilde;o)</td>
+              <td><span class="tag tag-orange">Recurrente</span></td>
+              <td>$0&ndash;$7,140</td>
+              <td>$0&ndash;$420</td>
+            </tr>
+            <tr class="price-total-row">
+              <td colspan="2">INVERSI&Oacute;N TOTAL PRIMER A&Ntilde;O</td>
+              <td>$62,040&ndash;$69,996</td>
+              <td>~$3,650&ndash;$4,117</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-box">
+        <div class="amount">$30,000</div>
+        <div class="label">Sitio Web P&uacute;blico (MXN)</div>
+      </div>
+      <div class="summary-box">
+        <div class="amount">$30,000</div>
+        <div class="label">Sistema Administrativo (MXN)</div>
+      </div>
+      <div class="summary-box highlight">
+        <div class="amount">$60,000</div>
+        <div class="label">Total Desarrollo (MXN)</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       9. REQUERIMIENTOS NO FUNCIONALES
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">9</span> Requerimientos No Funcionales Incluidos</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div class="card">
+        <div class="card-title">Arquitectura y C&oacute;digo</div>
+        <p>&bull; Arquitectura modular (NestJS modules)<br/>
+           &bull; API REST documentada con Swagger<br/>
+           &bull; C&oacute;digo tipado con TypeScript (100%)<br/>
+           &bull; Componentes reutilizables<br/>
+           &bull; C&oacute;digo escalable y mantenible</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Validaci&oacute;n y Seguridad</div>
+        <p>&bull; Validaciones en Frontend (Zod) y Backend (class-validator)<br/>
+           &bull; Manejo centralizado de errores<br/>
+           &bull; Variables de entorno seguras<br/>
+           &bull; CORS configurado por origen<br/>
+           &bull; Rate limiting en endpoints sensibles</p>
+      </div>
+      <div class="card">
+        <div class="card-title">UX y Responsividad</div>
+        <p>&bull; Responsive: Desktop y Tablet<br/>
+           &bull; Internacionalizaci&oacute;n ES / EN<br/>
+           &bull; Loading states y feedback visual<br/>
+           &bull; Navegaci&oacute;n intuitiva con sidebar<br/>
+           &bull; B&uacute;squeda global instant&aacute;nea</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Infraestructura</div>
+        <p>&bull; Docker Ready (desarrollo + producci&oacute;n)<br/>
+           &bull; CI/CD con GitHub Actions<br/>
+           &bull; Logging estructurado<br/>
+           &bull; Despliegue en VPS Ubuntu<br/>
+           &bull; Backups autom&aacute;ticos de BD</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       10. FUTURAS EXPANSIONES
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">10</span> Futuras Expansiones (fuera de alcance)</h2>
+
+    <div class="note">
+      <strong>Dise&ntilde;ado para crecer:</strong> La arquitectura modular de NestJS + Prisma permite agregar
+      estos m&oacute;dulos sin cambios estructurales importantes. Se cotizan por separado cuando se requieran.
+    </div>
+
+    <table>
+      <thead><tr><th>M&oacute;dulo futuro</th><th>Descripci&oacute;n</th><th>Complejidad</th></tr></thead>
+      <tbody>
+        <tr><td>Facturaci&oacute;n (CFDI)</td><td>Emisi&oacute;n de facturas electr&oacute;nicas (SAT)</td><td><span class="tag tag-red">Alta</span></td></tr>
+        <tr><td>Dashboard Financiero</td><td>Gr&aacute;ficas avanzadas de ingresos, m&aacute;rgenes, proyecciones</td><td><span class="tag tag-orange">Media</span></td></tr>
+        <tr><td>Multiempresa</td><td>Soporte para m&uacute;ltiples marcas/empresas desde un solo panel</td><td><span class="tag tag-red">Alta</span></td></tr>
+        <tr><td>Aplicaci&oacute;n M&oacute;vil</td><td>App nativa o PWA para operadores en campo</td><td><span class="tag tag-red">Alta</span></td></tr>
+        <tr><td>Chatbot con IA</td><td>Asistente autom&aacute;tico para consultas de clientes</td><td><span class="tag tag-orange">Media</span></td></tr>
+        <tr><td>Google Maps</td><td>Visualizaci&oacute;n de rutas y seguimiento en tiempo real</td><td><span class="tag tag-orange">Media</span></td></tr>
+        <tr><td>Asignaci&oacute;n autom&aacute;tica</td><td>Algoritmo de asignaci&oacute;n de veh&iacute;culos y conductores</td><td><span class="tag tag-orange">Media</span></td></tr>
+        <tr><td>Notificaciones Push</td><td>Alertas en tiempo real para operadores</td><td><span class="tag tag-blue">Baja</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       11. CONDICIONES
+  ══════════════════════════════════════════ -->
+  <div class="section">
+    <h2 class="section-title"><span class="num">11</span> Condiciones y Consideraciones</h2>
+
+    <div class="card">
+      <div class="card-title">Incluido en esta cotizaci&oacute;n</div>
+      <p>&bull; Desarrollo completo de los 24 m&oacute;dulos descritos (frontend + backend)<br/>
+         &bull; Dise&ntilde;o UI/UX del panel administrativo<br/>
+         &bull; Configuraci&oacute;n inicial de Docker, CI/CD y deploy en VPS<br/>
+         &bull; Documentaci&oacute;n t&eacute;cnica de la API (Swagger)<br/>
+         &bull; 1 mes de soporte post-entrega para correcciones de bugs</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">No incluido</div>
+      <p>&bull; Creaci&oacute;n de contenido (textos, fotograf&iacute;as, videos)<br/>
+         &bull; Contrataci&oacute;n y configuraci&oacute;n de cuentas de WhatsApp Business API<br/>
+         &bull; Costos recurrentes de infraestructura (VPS, dominio, servicios de terceros)<br/>
+         &bull; M&oacute;dulos listados como &ldquo;futuras expansiones&rdquo;<br/>
+         &bull; Mantenimiento continuo post-entrega (se cotiza aparte: ~$3,500&ndash;$7,000 MXN/mes)</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Vigencia</div>
+      <p>Esta cotizaci&oacute;n tiene una vigencia de <strong>30 d&iacute;as naturales</strong> a partir de la fecha de emisi&oacute;n (17 de junio de 2026).
+         Los precios pueden ajustarse despu&eacute;s de este periodo.</p>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <span>Mayan Transfer Experts &mdash; Cotizaci&oacute;n Sistema Administrativo v1.0</span>
+    <span>Elaborado por Eduardo Baas Kauil &middot; 17 de junio de 2026</span>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "find": "How to find Us",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "20+ years moving travellers in the Riviera Maya",
+    "title": "Private transportation in Cancún, done right.",
+    "subtitle": "Door-to-door private transfers across Cancún and the Riviera Maya — comfortable, safe and always on time.",
+    "points": ["Free cancellation & changes", "24/7 transfer service", "All taxes included", "Flight tracking"]
+  },
+  "tabs": {
+    "transport": "Transportation",
+    "multi": "Multi-Stop",
+    "airbnb": "Vacation Rental"
+  },
+  "form": {
+    "tripType": "Trip type",
+    "from": "From",
+    "to": "To",
+    "notFound": "Can't find your destination?",
+    "contactUs": "Contact us",
+    "arrival": "Arrival date",
+    "departure": "Departure date",
+    "adults": "Adults",
+    "children": "Children",
+    "search": "Search transfers",
+    "swap": "Swap"
+  },
+  "tripTypes": {
+    "round": "Round Trip",
+    "oneway": "One Way",
+    "arrival": "Arrival only",
+    "departure": "Departure only"
+  },
+  "otherTab": {
+    "title": "Multiple stops & rentals",
+    "body": "Travelling to more than one place, or staying at a vacation rental? Build a custom multi-stop route with us.",
+    "btn": "Back to transfers"
+  },
+  "services": {
+    "kicker": "Why Cancún Transfer Hotels",
+    "title": "Transportation services in Cancún & the Riviera Maya",
+    "body": "We provide high-quality private transfers across Cancún and the Riviera Maya. Our goal is a comfortable, safe and hassle-free journey from the moment you land until you are back at the airport.",
+    "areasTitle": "Popular transfer areas",
+    "areas": ["Hotel Zone", "Playa del Carmen", "Tulum", "Puerto Morelos", "Puerto Aventuras", "Akumal", "Playa Mujeres", "Holbox"],
+    "props": [
+      { "icon": "🛡️", "title": "Safe & certified", "body": "Licensed vehicles, professional bilingual drivers and travel insurance on every ride." },
+      { "icon": "🕑", "title": "On time, every time", "body": "We track your flight, so we are there waiting — even if your plane is early or late." },
+      { "icon": "💳", "title": "No hidden fees", "body": "The price you see includes taxes. Free cancellation and changes on most bookings." }
+    ]
+  },
+  "steps": ["Trip", "Vehicle", "Extras", "Confirm & Pay"],
+  "summary": {
+    "title": "Your trip",
+    "transfer": "Transfer",
+    "arrival": "Arrival",
+    "return": "Return",
+    "passengers": "Passengers",
+    "adultsLabel": "Adults",
+    "childrenLabel": "Children",
+    "edit": "Edit search",
+    "update": "Update search"
+  },
+  "assist": {
+    "title": "Need assistance?",
+    "body": "Our team answers 24/7 in English & Spanish.",
+    "chat": "Chat on WhatsApp"
+  },
+  "results": {
+    "title": "Choose your vehicle",
+    "private": "Private service",
+    "price": "Price",
+    "taxIncl": "Tax included",
+    "select": "Select",
+    "illustrative": "Image for illustrative purposes",
+    "features": ["GPS tracking", "Private transfer", "Free cancellation", "Comfortable seats", "No hidden fees", "Travel insurance"]
+  },
+  "extras": {
+    "title": "Add extras",
+    "subtitle": "Optional — added to your total",
+    "total": "Total",
+    "continue": "Continue",
+    "free": "Free",
+    "items": {
+      "water": ["Bottled Water", "600 ml · brand may vary", "💧"],
+      "beer": ["Beer (can)", "Corona", "🍺"],
+      "chips": ["Chips", "Lay's Classic", "🍟"],
+      "coke": ["Coca-Cola", "235 ml can", "🥤"],
+      "cokezero": ["Coca-Cola Zero", "235 ml can", "🥤"],
+      "carseat": ["Baby Car Seat", "Courtesy · subject to availability", "🧒"],
+      "grocery": ["Grocery Stop", "Walmart / Costco / Chedraui · 60 min", "🛒"],
+      "ferrycoz": ["Ferry — PDC to Cozumel", "Round-trip ticket", "⛴️"],
+      "ferryisla": ["Ferry — Isla Mujeres", "Round-trip ticket", "⛴️"]
+    }
+  },
+  "checkout": {
+    "passenger": "Passenger details",
+    "firstName": "First name(s)",
+    "firstNamePh": "John",
+    "lastName": "Last name(s)",
+    "lastNamePh": "Doe",
+    "email": "Email",
+    "confirmEmail": "Confirm email",
+    "contactPref": "Preferred contact",
+    "whatsapp": "WhatsApp",
+    "emailPref": "E-mail",
+    "cellphone": "Cellphone",
+    "arrivalFlight": "Arrival flight",
+    "depFlight": "Departure flight",
+    "airline": "Airline",
+    "flightNo": "Flight no.",
+    "arrTime": "Arrival time",
+    "depTime": "Departure time",
+    "comments": "Comments",
+    "commentsPh": "Anything we should know? Car seat age, extra luggage…",
+    "oneTerminal": "My party arrives at one terminal",
+    "twoTerminals": "My party arrives at two terminals",
+    "payment": "Payment",
+    "payNote": "After your purchase you will receive an email with payment confirmation and detailed pick-up instructions.",
+    "accept": "I accept the",
+    "terms": "Terms & Conditions",
+    "card": "Debit or Credit Card",
+    "secure": "Secured"
+  },
+  "confirmation": {
+    "title": "Booking confirmed!",
+    "subtitle": "You will receive an email with your transfer details.",
+    "bookingNumber": "Booking number",
+    "backHome": "Back to home"
+  },
+  "footer": {
+    "blurb": "Private airport transfers and tours across Cancún and the Riviera Maya. Member of Alianza Nacional de Transportadoras Turísticas.",
+    "transfers": "Transfers",
+    "links": ["Transfer to Hotel Zone", "Transfer to Playa del Carmen", "Transfer to Tulum", "Transfer to Puerto Morelos", "Transfer to Akumal", "Transfer to Holbox"],
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "terms": "Terms · Privacy · FAQ"
+  },
+  "contact": {
+    "title": "Contact us",
+    "name": "Full name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "info": "Contact information",
+    "schedule": "Mon–Sun, 24/7"
+  },
+  "about": {
+    "title": "About us",
+    "subtitle": "20+ years providing premium transfers in Cancún and the Riviera Maya",
+    "history": "Founded over 20 years ago, Cancún Transfer Hotels has become one of the most trusted transfer companies in the Riviera Maya. Our certified bilingual drivers, modern fleet, and real-time flight monitoring ensure every guest receives a comfortable, safe, and punctual experience.",
+    "certified": "Certified drivers",
+    "fleet": "Own fleet",
+    "monitoring": "Flight monitoring",
+    "insurance": "Travel insurance"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you are looking for doesn't exist or has been moved.",
+    "back": "Back to home"
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Enter a valid email",
+    "emailMatch": "Emails do not match",
+    "minChars": "Minimum {{count}} characters",
+    "acceptTerms": "You must accept the terms and conditions",
+    "futureDate": "Date must be in the future",
+    "departurAfterArrival": "Departure must be after arrival"
+  }
+}

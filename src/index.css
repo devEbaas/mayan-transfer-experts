@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #102A43;
+  --color-navy-dark: #0B2036;
+  --color-navy-mid: #13344f;
+  --color-teal: #0E8C82;
+  --color-teal-dark: #0b756c;
+  --color-teal-glow: #3FD0C0;
+  --color-teal-light: #eef7f5;
+  --color-sand: #F5F2EC;
+  --color-border: #ece6da;
+  --color-border-input: #dfe4ea;
+  --color-text-secondary: #5a6b7a;
+  --color-text-muted: #7c8896;
+  --color-text-light: #9aa7b4;
+  --color-text-body: #52616f;
+  --color-text-dark: #475563;
+  --color-text-heading: #3a4858;
+  --color-paypal: #FFC439;
+  --color-card-purple: #3A2FD0;
+  --color-info-bg: #eaf4fb;
+  --color-info-border: #cfe6f6;
+  --color-info-text: #2b5572;
+  --color-whatsapp: #25D366;
+
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-sans); background: var(--color-sand); color: var(--color-navy); -webkit-font-smoothing: antialiased; }
+input, select, textarea, button { font-family: inherit; }
+::placeholder { color: var(--color-text-light); }
+
+@keyframes ctfade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
