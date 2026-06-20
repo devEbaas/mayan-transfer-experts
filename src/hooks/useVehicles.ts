@@ -1,46 +1,46 @@
 import { useAppStore } from '@/store/appStore';
 import type { Vehicle } from '@/types/booking';
 
-const VEHICLES_DATA: Vehicle[] = [
+const VEHICLES_EN: Vehicle[] = [
   {
     id: 'van',
     name: 'Private Van',
-    capacity: 'Up to 8 passengers · luggage included',
+    cap: 'Up to 8 passengers · luggage included',
     price: 89.6,
-    imgNote: 'VEHICLE PHOTO · Van',
+    imgNote: 'PHOTO · Private Van',
   },
   {
     id: 'suv',
     name: 'Suburban SUV',
-    capacity: 'Up to 6 passengers · premium service',
+    cap: 'Up to 6 passengers · premium service',
     price: 260.1,
-    imgNote: 'VEHICLE PHOTO · SUV',
+    imgNote: 'PHOTO · Suburban SUV',
   },
 ];
 
-const VEHICLES_DATA_ES: Vehicle[] = [
+const VEHICLES_ES: Vehicle[] = [
   {
     id: 'van',
     name: 'Van Privada',
-    capacity: 'Hasta 8 pasajeros · equipaje incluido',
+    cap: 'Hasta 8 pasajeros · equipaje incluido',
     price: 89.6,
-    imgNote: 'VEHICLE PHOTO · Van',
+    imgNote: 'PHOTO · Private Van',
   },
   {
     id: 'suv',
     name: 'SUV Suburban',
-    capacity: 'Hasta 6 pasajeros · servicio premium',
+    cap: 'Hasta 6 pasajeros · servicio premium',
     price: 260.1,
-    imgNote: 'VEHICLE PHOTO · SUV',
+    imgNote: 'PHOTO · Suburban SUV',
   },
 ];
 
 export function useVehicles() {
   const lang = useAppStore((s) => s.lang);
-  return lang === 'es' ? VEHICLES_DATA_ES : VEHICLES_DATA;
+  return lang === 'es' ? VEHICLES_ES : VEHICLES_EN;
 }
 
-export function useVehicleById(id: string | null) {
+export function useVehicleById(id: string) {
   const vehicles = useVehicles();
   return vehicles.find((v) => v.id === id) || vehicles[0];
 }

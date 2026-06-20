@@ -1,17 +1,21 @@
 import type { ReactNode } from 'react';
-import UtilityBar from './UtilityBar';
 import Header from './Header';
 import Footer from './Footer';
+import ActionBar from './ActionBar';
+import { useBookingStore } from '@/store/bookingStore';
+import { useReveal } from '@/hooks/useReveal';
 
 export default function Layout({ children }: { children: ReactNode }) {
+  const screen = useBookingStore((s) => s.screen);
+
+  useReveal();
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="sticky top-0 z-50">
-        <UtilityBar />
-        <Header />
-      </header>
-      <main className="flex-1">{children}</main>
-      <Footer />
+    <div className="min-h-screen flex flex-col bg-bg text-navy" style={{ fontFamily: "'Figtree',system-ui,-apple-system,sans-serif" }}>
+      <Header />
+      <main className="flex-1 w-full">{children}</main>
+      {screen !== 'done' && <ActionBar />}
+      {screen === 'route' && <Footer />}
     </div>
   );
 }
