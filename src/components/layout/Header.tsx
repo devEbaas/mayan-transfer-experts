@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { useAppStore, type Currency } from '@/store/appStore';
+import { useAppStore } from '@/store/appStore';
 import { useBookingStore, type Screen } from '@/store/bookingStore';
 
-const SCREENS: Screen[] = ['route', 'pax', 'vehicle', 'details', 'pay'];
+const SCREENS: Screen[] = ['route', 'pax', 'vehicle', 'extras', 'details', 'pay'];
 
 export default function Header() {
   const { t, i18n } = useTranslation();
-  const { currency, setCurrency, lang, toggleLang } = useAppStore();
+  const { lang, toggleLang } = useAppStore();
   const { screen, goHome } = useBookingStore();
 
   const handleToggleLang = () => {
@@ -33,21 +33,6 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-2.5">
-          <select
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value as Currency)}
-            className="appearance-none border-[1.5px] border-border-input bg-white rounded-[11px] px-3.5 pr-[30px] py-2.5 text-[13.5px] font-bold text-navy cursor-pointer"
-            style={{
-              backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="%23B8AB99" stroke-width="1.6" fill="none"/></svg>')`,
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'right 12px center',
-            }}
-          >
-            <option value="USD">USD</option>
-            <option value="MXN">MXN</option>
-            <option value="CAD">CAD</option>
-            <option value="EUR">EUR</option>
-          </select>
           <button
             onClick={handleToggleLang}
             className="border-[1.5px] border-border-input bg-white rounded-[11px] px-3.5 py-2.5 text-[13.5px] font-extrabold text-navy cursor-pointer flex items-center gap-[7px] hover:border-teal-hover hover:text-teal-hover transition-colors"

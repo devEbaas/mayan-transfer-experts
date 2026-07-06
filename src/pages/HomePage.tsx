@@ -2,6 +2,7 @@ import { useBookingStore } from '@/store/bookingStore';
 import RouteStep from '@/components/wizard/RouteStep';
 import PaxStep from '@/components/wizard/PaxStep';
 import VehicleStep from '@/components/wizard/VehicleStep';
+import ExtrasStep from '@/components/wizard/ExtrasStep';
 import DetailsStep from '@/components/wizard/DetailsStep';
 import PayStep from '@/components/wizard/PayStep';
 import DoneStep from '@/components/wizard/DoneStep';
@@ -26,6 +27,7 @@ export default function HomePage() {
       )}
       {screen === 'pax' && <PaxStep />}
       {screen === 'vehicle' && <VehicleStep />}
+      {screen === 'extras' && <ExtrasStep />}
       {screen === 'details' && <DetailsStep />}
       {screen === 'pay' && <PayStep />}
       {screen === 'done' && <DoneStep />}

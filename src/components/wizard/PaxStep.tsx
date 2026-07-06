@@ -3,7 +3,7 @@ import { useBookingStore } from '@/store/bookingStore';
 
 export default function PaxStep() {
   const { t } = useTranslation();
-  const { form, bumpAdults, bumpChildren } = useBookingStore();
+  const { trip, bumpAdults, bumpChildren } = useBookingStore();
 
   return (
     <section className="max-w-[640px] mx-auto px-6 pt-[46px] pb-6" style={{ animation: 'ctview .45s cubic-bezier(.16,1,.3,1) both' }}>
@@ -26,7 +26,7 @@ export default function PaxStep() {
             >
               −
             </button>
-            <span className="min-w-8 text-center text-2xl font-extrabold text-navy">{form.adults}</span>
+            <span className="min-w-8 text-center text-2xl font-extrabold text-navy">{trip.adults}</span>
             <button
               onClick={() => bumpAdults(1)}
               className="w-[46px] h-[46px] rounded-full border-none bg-primary text-white text-2xl font-bold cursor-pointer leading-none hover:bg-teal-hover transition-colors flex items-center justify-center"
@@ -50,7 +50,7 @@ export default function PaxStep() {
             >
               −
             </button>
-            <span className="min-w-8 text-center text-2xl font-extrabold text-navy">{form.children}</span>
+            <span className="min-w-8 text-center text-2xl font-extrabold text-navy">{trip.children}</span>
             <button
               onClick={() => bumpChildren(1)}
               className="w-[46px] h-[46px] rounded-full border-none bg-primary text-white text-2xl font-bold cursor-pointer leading-none hover:bg-teal-hover transition-colors flex items-center justify-center"

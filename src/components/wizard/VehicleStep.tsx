@@ -1,14 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { useBookingStore } from '@/store/bookingStore';
 import { useAppStore } from '@/store/appStore';
-import { useVehicles } from '@/hooks/useVehicles';
+import { useVehicleRates, bestPrice } from '@/hooks/useVehicles';
+import { getVehicleFeatures } from '@/data/vehicleFeatures';
 
 export default function VehicleStep() {
   const { t } = useTranslation();
-  const { vehicleId, setVehicle } = useBookingStore();
+  const { trip, vehicleId, setVehicle, errors } = useBookingStore();
   const formatPrice = useAppStore((s) => s.formatPrice);
-  const vehicles = useVehicles();
-  const features = t('features', { returnObjects: true }) as string[];
+  const { data: rates = [], isLoading } = useVehicleRates(trip.originId || null, trip.destinationId || null);
+
+  const totalPax = trip.adults + trip.children;
+  const vehicles = rates.filter((v) => v.capacityPassengers >= totalPax);
 
   return (
     <section className="max-w-[840px] mx-auto px-6 pt-[46px] pb-6" style={{ animation: 'ctview .45s cubic-bezier(.16,1,.3,1) both' }}>
@@ -17,13 +20,22 @@ export default function VehicleStep() {
         {t('v_title')}
       </h1>
 
+      {errors.vehicleId && (
+        <p className="text-red-600 text-sm font-semibold mb-4">{t(errors.vehicleId)}</p>
+      )}
+
+      {!isLoading && vehicles.length === 0 && (
+        <p className="text-text-secondary text-sm font-semibold">{t('noVehicles')}</p>
+      )}
+
       <div className="grid gap-[18px]">
         {vehicles.map((v) => {
-          const sel = v.id === vehicleId;
+          const sel = v.vehicleId === vehicleId;
+          const features = getVehicleFeatures(v, t);
           return (
             <div
-              key={v.id}
-              onClick={() => setVehicle(v.id)}
+              key={v.vehicleId}
+              onClick={() => setVehicle(v.vehicleId)}
               className="bg-white rounded-[20px] overflow-hidden cursor-pointer transition-[border-color]"
               style={{
                 border: `2px solid ${sel ? '#1F5FC0' : '#E2E9F2'}`,
@@ -34,8 +46,12 @@ export default function VehicleStep() {
             >
               <div className="p-[22px] flex flex-wrap gap-[22px] items-center">
                 <div className="flex-[1_1_180px] max-w-[230px] min-w-0">
-                  <div className="rounded-[14px] h-[120px] flex items-center justify-center font-mono text-[11px] text-text-light text-center p-2.5" style={{ background: 'repeating-linear-gradient(135deg,#EAF1F9,#EAF1F9 11px,#DBE5F1 11px,#DBE5F1 22px)' }}>
-                    {v.imgNote}
+                  <div className="rounded-[14px] h-[120px] flex items-center justify-center font-mono text-[11px] text-text-light text-center p-2.5 overflow-hidden" style={{ background: 'repeating-linear-gradient(135deg,#EAF1F9,#EAF1F9 11px,#DBE5F1 11px,#DBE5F1 22px)' }}>
+                    {v.imageUrl ? (
+                      <img src={v.imageUrl} alt={v.name} className="w-full h-full object-cover rounded-[14px]" />
+                    ) : (
+                      `PHOTO · ${v.name}`
+                    )}
                   </div>
                 </div>
                 <div className="flex-[3_1_280px] min-w-0">
@@ -49,12 +65,14 @@ export default function VehicleStep() {
                           </span>
                         )}
                       </div>
-                      <div className="text-[13.5px] text-text-muted mt-1">{v.cap}</div>
+                      <div className="text-[13.5px] text-text-muted mt-1">
+                        {v.capacityPassengers} pax · {v.capacityLuggage} luggage
+                      </div>
                     </div>
                     <div className="text-right">
                       <div className="text-[11px] font-extrabold tracking-[.5px] uppercase text-text-light">{t('price')}</div>
                       <div className="font-display text-[30px] font-extrabold text-primary" style={{ letterSpacing: '-.6px' }}>
-                        {formatPrice(v.price)}
+                        {formatPrice(bestPrice(v), v.currency)}
                       </div>
                       <div className="text-[11.5px] text-text-light">{t('taxIncl')}</div>
                     </div>

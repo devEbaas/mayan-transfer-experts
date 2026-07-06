@@ -4,6 +4,7 @@ import { useBookingStore } from '@/store/bookingStore';
 export default function DoneStep() {
   const { t } = useTranslation();
   const reset = useBookingStore((s) => s.reset);
+  const folio = useBookingStore((s) => s.folio);
 
   return (
     <section className="max-w-[620px] mx-auto px-6 pt-[70px] pb-10 text-center" style={{ animation: 'ctview .45s cubic-bezier(.16,1,.3,1) both' }}>
@@ -21,7 +22,7 @@ export default function DoneStep() {
       </p>
       <div className="inline-flex items-center gap-2.5 bg-white border border-border rounded-[14px] px-[22px] py-3.5 mb-[30px]">
         <span className="text-[12px] font-bold text-text-muted uppercase tracking-[.5px]">{t('done_ref')}</span>
-        <span className="font-display text-xl font-extrabold text-primary tracking-[.5px]">CTH-7K2940</span>
+        <span className="font-display text-xl font-extrabold text-primary tracking-[.5px]">{folio ?? '—'}</span>
       </div>
       <div>
         <button
