@@ -3,7 +3,8 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { ContactPref, PayMethod, TripType } from '@/types/booking';
 
 export type { TripType, ContactPref, PayMethod };
-export type Screen = 'route' | 'pax' | 'vehicle' | 'extras' | 'details' | 'pay' | 'done';
+export type Screen = 'route' | 'pax' | 'vehicle' | 'extras' | 'details' | 'pay' | 'done' | 'payment-result';
+export type PaymentOutcome = 'cancelled' | 'failed' | 'unknown';
 
 export const BOOKING_TTL_MS = 24 * 60 * 60 * 1000;
 const STORAGE_KEY = 'mte-booking';
@@ -84,6 +85,8 @@ interface BookingStore {
   termsAccepted: boolean;
   bookingId: string | null;
   folio: string | null;
+  /** Transient, not persisted — set right before navigating to the payment-result screen. */
+  lastPaymentOutcome: PaymentOutcome | null;
 
   setScreen: (s: Screen) => void;
   setTripField: <K extends keyof TripForm>(key: K, value: TripForm[K]) => void;
@@ -95,6 +98,7 @@ interface BookingStore {
   setContactPref: (p: ContactPref) => void;
   setTermsAccepted: (v: boolean) => void;
   setBookingId: (id: string, folio: string) => void;
+  setPaymentOutcome: (outcome: PaymentOutcome) => void;
   swap: () => void;
   bumpAdults: (delta: number) => void;
   bumpChildren: (delta: number) => void;
@@ -133,6 +137,7 @@ export const useBookingStore = create<BookingStore>()(
       termsAccepted: false,
       bookingId: null,
       folio: null,
+      lastPaymentOutcome: null,
 
       setScreen: (screen) => {
         set({ screen, errors: {} });
@@ -161,6 +166,7 @@ export const useBookingStore = create<BookingStore>()(
       setContactPref: (contactPref) => set({ contactPref }),
       setTermsAccepted: (termsAccepted) => set({ termsAccepted }),
       setBookingId: (bookingId, folio) => set({ bookingId, folio }),
+      setPaymentOutcome: (lastPaymentOutcome) => set({ lastPaymentOutcome }),
       swap: () =>
         set((s) => ({
           trip: { ...s.trip, originId: s.trip.destinationId, destinationId: s.trip.originId },
@@ -205,6 +211,7 @@ export const useBookingStore = create<BookingStore>()(
           termsAccepted: false,
           bookingId: null,
           folio: null,
+          lastPaymentOutcome: null,
         }),
     }),
     {

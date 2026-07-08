@@ -8,13 +8,11 @@ import { useExtras } from '@/hooks/useExtras';
 import { api, extractApiErrorMessage } from '@/lib/api';
 import type { BookingResponse, CheckoutSessionResponse, CreateBookingPayload } from '@/types/booking';
 
-type ReturnState = 'idle' | 'confirming' | 'failed' | 'cancelled';
+type ReturnState = 'idle' | 'confirming';
 
 function initialReturnState(): ReturnState {
   const params = new URLSearchParams(window.location.search);
-  const bookingParam = params.get('booking');
-  if (bookingParam === 'success' && params.get('session_id')) return 'confirming';
-  if (bookingParam === 'cancel') return 'cancelled';
+  if (params.get('booking') === 'success' && params.get('session_id')) return 'confirming';
   return 'idle';
 }
 
@@ -22,7 +20,7 @@ export default function PayStep() {
   const { t, i18n } = useTranslation();
   const {
     trip, vehicleId, extras, customer, flight, contactPref,
-    termsAccepted, setTermsAccepted, bookingId, setBookingId, setScreen, setErrors, errors,
+    termsAccepted, setTermsAccepted, bookingId, setBookingId, setScreen, setPaymentOutcome, setErrors, errors,
   } = useBookingStore();
   const formatPrice = useAppStore((s) => s.formatPrice);
   const { data: places = [] } = useRoutes();
@@ -83,17 +81,35 @@ export default function PayStep() {
     }
   }, []);
 
+  // User backed out of Stripe Checkout — send them to the dedicated result screen.
+  useEffect(() => {
+    if (returnParamsRef.current!.bookingParam === 'cancel') {
+      setPaymentOutcome('cancelled');
+      setScreen('payment-result');
+    }
+  }, [setScreen, setPaymentOutcome]);
+
   // Poll for the payment outcome once we're back from Stripe Checkout. This re-runs when
   // `bookingId` changes because zustand's persist middleware rehydrates from localStorage
   // asynchronously — on the very first render `bookingId` can still be null even though the
-  // booking was already created before the redirect.
+  // booking was already created before the redirect. If it's still null after a short grace
+  // period (e.g. the user opened the success link on another device, or cleared storage),
+  // we can't poll — show the "unknown" result instead of hanging on "confirming" forever.
   useEffect(() => {
     const { bookingParam, sessionId } = returnParamsRef.current!;
-    if (bookingParam !== 'success' || !sessionId || !bookingId) {
-      return;
-    }
-    let cancelled = false;
+    if (bookingParam !== 'success' || !sessionId) return;
 
+    if (!bookingId) {
+      const grace = setTimeout(() => {
+        if (!useBookingStore.getState().bookingId) {
+          setPaymentOutcome('unknown');
+          setScreen('payment-result');
+        }
+      }, 2000);
+      return () => clearTimeout(grace);
+    }
+
+    let cancelled = false;
     const poll = async () => {
       for (let attempt = 0; attempt < 15; attempt++) {
         try {
@@ -103,7 +119,10 @@ export default function PayStep() {
             return;
           }
           if (data.paymentStatus === 'failed') {
-            if (!cancelled) setReturnState('failed');
+            if (!cancelled) {
+              setPaymentOutcome('failed');
+              setScreen('payment-result');
+            }
             return;
           }
         } catch {
@@ -111,14 +130,17 @@ export default function PayStep() {
         }
         await new Promise((resolve) => setTimeout(resolve, 2000));
       }
-      if (!cancelled) setReturnState('failed');
+      if (!cancelled) {
+        setPaymentOutcome('failed');
+        setScreen('payment-result');
+      }
     };
 
     void poll();
     return () => {
       cancelled = true;
     };
-  }, [bookingId, setScreen]);
+  }, [bookingId, setScreen, setPaymentOutcome]);
 
   const buildPayload = (): CreateBookingPayload | null => {
     if (!origin || !destination || !vehicleId) return null;
@@ -246,12 +268,6 @@ export default function PayStep() {
 
         {returnState !== 'confirming' && (
           <>
-            {returnState === 'failed' && (
-              <p className="text-red-600 text-sm font-semibold mb-3">{t('payError')}</p>
-            )}
-            {returnState === 'cancelled' && (
-              <p className="text-red-600 text-sm font-semibold mb-3">{t('payCancelled')}</p>
-            )}
             <label className="flex items-center gap-2.5 text-sm text-text-body cursor-pointer">
               <input
                 type="checkbox"

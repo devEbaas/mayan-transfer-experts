@@ -7,7 +7,10 @@ export default function ResumeBookingPrompt() {
   const [visible, setVisible] = useState(() => {
     const { savedAt, screen } = useBookingStore.getState();
     const expired = Date.now() - savedAt > BOOKING_TTL_MS;
-    return !expired && screen !== 'route';
+    // Returning from a Stripe Checkout redirect is a deliberate continuation, not a stale
+    // session — don't cover PayStep's confirmation UI or the payment-result screen with this.
+    const returningFromStripe = new URLSearchParams(window.location.search).has('booking');
+    return !expired && screen !== 'route' && !returningFromStripe;
   });
 
   useEffect(() => {

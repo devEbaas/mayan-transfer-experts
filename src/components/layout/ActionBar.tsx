@@ -71,7 +71,7 @@ export default function ActionBar() {
     next();
   };
 
-  if (screen === 'done') return null;
+  if (screen === 'done' || screen === 'payment-result') return null;
 
   return (
     <div

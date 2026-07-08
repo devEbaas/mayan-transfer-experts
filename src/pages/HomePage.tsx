@@ -6,6 +6,7 @@ import ExtrasStep from '@/components/wizard/ExtrasStep';
 import DetailsStep from '@/components/wizard/DetailsStep';
 import PayStep from '@/components/wizard/PayStep';
 import DoneStep from '@/components/wizard/DoneStep';
+import PaymentResultStep from '@/components/wizard/PaymentResultStep';
 import AboutSection from '@/components/home/AboutSection';
 import AmenitiesSection from '@/components/home/AmenitiesSection';
 import PaymentSection from '@/components/home/PaymentSection';
@@ -31,6 +32,7 @@ export default function HomePage() {
       {screen === 'details' && <DetailsStep />}
       {screen === 'pay' && <PayStep />}
       {screen === 'done' && <DoneStep />}
+      {screen === 'payment-result' && <PaymentResultStep />}
     </>
   );
 }
