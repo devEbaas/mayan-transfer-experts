@@ -133,14 +133,15 @@
   "err_flightTime": "Indica la hora del vuelo.",
   "err_terms": "Debes aceptar los términos y condiciones.",
 
-  "home_aboutKicker": "Sobre nosotros",
-  "home_aboutTitle": "Tu socio de transporte terrestre en la Riviera Maya",
-  "home_aboutBody": "Cancún Transfer Hotels es una empresa local de transporte que mueve viajeros de forma segura por Cancún, Playa del Carmen, Tulum y toda la Riviera Maya. Choferes certificados, vehículos de modelo reciente y un equipo bilingüe 24/7 hacen cada traslado sin esfuerzo desde que aterrizas.",
-  "home_aboutStats": [
-    { "n": "20+", "l": "Años de experiencia" },
-    { "n": "250K+", "l": "Viajeros satisfechos" },
-    { "n": "30+", "l": "Destinos cubiertos" },
-    { "n": "4.9★", "l": "Calificación promedio" }
+  "home_aboutKicker": "Por qué Cancún Transfer Hotels",
+  "home_aboutTitle": "Servicios de transporte en Cancún y la Riviera Maya",
+  "home_aboutBody": "Ofrecemos traslados privados de alta calidad en Cancún y la Riviera Maya. Buscamos un viaje cómodo, seguro y sin complicaciones desde que aterrizas hasta tu regreso al aeropuerto.",
+  "svcAreas": "Zonas de traslado populares",
+  "areas": ["Zona Hotelera", "Playa del Carmen", "Tulum", "Puerto Morelos", "Puerto Aventuras", "Akumal", "Playa Mujeres", "Holbox"],
+  "valueProps": [
+    { "icon": "🛡️", "title": "Seguro y certificado", "body": "Vehículos con licencia, choferes profesionales bilingües y seguro de viaje en cada traslado." },
+    { "icon": "🕑", "title": "Siempre puntuales", "body": "Damos seguimiento a tu vuelo: te esperamos aunque tu avión llegue antes o se retrase." },
+    { "icon": "💳", "title": "Sin cargos ocultos", "body": "El precio que ves incluye impuestos. Cancelación y cambios gratis en la mayoría de reservas." }
   ],
   "home_amenKicker": "Amenidades a bordo",
   "home_amenTitle": "Todo para un viaje cómodo",
@@ -177,8 +178,33 @@
   "footBlurb": "Traslados privados de aeropuerto y tours",
   "footRights": "Todos los derechos reservados.",
   "footTerms": "Términos · Privacidad · FAQ",
+  "footTransfers": "Traslados",
+  "footLinks": ["Traslado a Zona Hotelera", "Traslado a Playa del Carmen", "Traslado a Tulum", "Traslado a Puerto Morelos", "Traslado a Akumal", "Traslado a Holbox"],
+  "footContact": "Contacto",
+  "footBadgeSsl": "🔒 SSL Seguro",
+  "footBadgePaypal": "Protegido por PayPal",
 
   "stepLabels": ["Ruta", "Pasajeros", "Vehículo", "Extras", "Datos", "Pago"],
   "adultsWord": "Adultos",
-  "childrenWord": "Niños"
+  "childrenWord": "Niños",
+
+  "navHome": "Inicio",
+  "navAbout": "Nosotros",
+  "navFind": "Cómo llegar",
+  "navContact": "Contacto",
+
+  "heroBadge": "+20 años moviendo viajeros en la Riviera Maya",
+  "tabTransport": "Transporte",
+  "tabMulti": "Multi-Parada",
+  "tabAirbnb": "Renta Vacacional",
+  "otherTabTitle": "Multi-parada y rentas",
+  "otherTabBody": "¿Viajas a más de un lugar o te hospedas en una renta vacacional? Arma con nosotros una ruta personalizada.",
+  "otherTabBtn": "Volver a traslados",
+
+  "pressKicker": "Confiado y certificado por",
+
+  "sumEdit": "Editar búsqueda",
+  "assistTitle": "¿Necesitas ayuda?",
+  "assistBody": "Atendemos 24/7 en español e inglés.",
+  "assistChat": "Chatear por WhatsApp"
 }

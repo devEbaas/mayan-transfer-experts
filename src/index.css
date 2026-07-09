@@ -1,33 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1F5FC0;
-  --color-primary-dark: #0B2E5E;
-  --color-primary-hover: #0FB0A4;
-  --color-navy: #14223A;
-  --color-navy-dark: #0B2E5E;
-  --color-gold: #FFC53D;
-  --color-teal: #14B8A6;
-  --color-teal-hover: #0FB0A4;
-  --color-bg: #EFF3F9;
-  --color-bg-card: #F6F9FD;
-  --color-border: #E2E9F2;
-  --color-border-input: #D8E1EC;
-  --color-text-secondary: #62708A;
-  --color-text-muted: #76839A;
-  --color-text-light: #98A4B7;
-  --color-text-body: #465064;
-  --color-info-bg: #E9F1FC;
-  --color-info-border: #CBDDF7;
-  --color-info-text: #1A4F9E;
-  --color-footer-text: #93B4DE;
-  --color-footer-link: #7FA0CC;
-  --color-footer-border: #163C72;
-  --color-footer-muted: #6E8CBE;
+  --color-primary: #0E8C82;
+  --color-primary-hover: #0b756c;
+  --color-navy: #14181F;
+  --color-navy-dark: #0A0B0D;
+  --color-teal: #3FD0C0;
+  --color-teal-hover: #0b756c;
+  --color-bg: #F5F2EC;
+  --color-bg-card: #FFFFFF;
+  --color-border: #ece6da;
+  --color-border-input: #dfe4ea;
+  --color-text-secondary: #5a6b7a;
+  --color-text-muted: #7c8896;
+  --color-text-light: #9aa7b4;
+  --color-text-body: #475563;
+  --color-info-bg: #eef7f5;
+  --color-info-border: #0E8C82;
+  --color-info-text: #0E8C82;
+  --color-footer-text: #90a1b3;
+  --color-footer-link: #90a1b3;
+  --color-footer-border: #22262C;
+  --color-footer-muted: #6f8398;
 
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; }

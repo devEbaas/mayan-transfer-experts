@@ -133,14 +133,15 @@
   "err_flightTime": "Enter the flight time.",
   "err_terms": "You must accept the terms and conditions.",
 
-  "home_aboutKicker": "About us",
-  "home_aboutTitle": "Your trusted ground partner in the Riviera Maya",
-  "home_aboutBody": "Cancún Transfer Hotels is a locally-owned transportation company moving travelers safely across Cancún, Playa del Carmen, Tulum and the whole Riviera Maya. Certified drivers, late-model vehicles and a 24/7 bilingual team make every transfer effortless from the moment you land.",
-  "home_aboutStats": [
-    { "n": "20+", "l": "Years of experience" },
-    { "n": "250K+", "l": "Happy travelers" },
-    { "n": "30+", "l": "Destinations covered" },
-    { "n": "4.9★", "l": "Average guest rating" }
+  "home_aboutKicker": "Why Cancún Transfer Hotels",
+  "home_aboutTitle": "Transportation services in Cancún & the Riviera Maya",
+  "home_aboutBody": "We provide high-quality private transfers across Cancún and the Riviera Maya. Our goal is a comfortable, safe and hassle-free journey from the moment you land until you're back at the airport.",
+  "svcAreas": "Popular transfer areas",
+  "areas": ["Hotel Zone", "Playa del Carmen", "Tulum", "Puerto Morelos", "Puerto Aventuras", "Akumal", "Playa Mujeres", "Holbox"],
+  "valueProps": [
+    { "icon": "🛡️", "title": "Safe & certified", "body": "Licensed vehicles, professional bilingual drivers and travel insurance on every ride." },
+    { "icon": "🕑", "title": "On time, every time", "body": "We track your flight, so we're there waiting — even if your plane is early or late." },
+    { "icon": "💳", "title": "No hidden fees", "body": "The price you see includes taxes. Free cancellation and changes on most bookings." }
   ],
   "home_amenKicker": "On-board amenities",
   "home_amenTitle": "Everything for a comfortable ride",
@@ -177,8 +178,33 @@
   "footBlurb": "Private airport transfers & tours",
   "footRights": "All rights reserved.",
   "footTerms": "Terms · Privacy · FAQ",
+  "footTransfers": "Transfers",
+  "footLinks": ["Transfer to Hotel Zone", "Transfer to Playa del Carmen", "Transfer to Tulum", "Transfer to Puerto Morelos", "Transfer to Akumal", "Transfer to Holbox"],
+  "footContact": "Contact",
+  "footBadgeSsl": "🔒 SSL Secure",
+  "footBadgePaypal": "Secured by PayPal",
 
   "stepLabels": ["Route", "Travelers", "Vehicle", "Extras", "Details", "Payment"],
   "adultsWord": "Adults",
-  "childrenWord": "Children"
+  "childrenWord": "Children",
+
+  "navHome": "Home",
+  "navAbout": "About Us",
+  "navFind": "How to find Us",
+  "navContact": "Contact",
+
+  "heroBadge": "20+ years moving travelers in the Riviera Maya",
+  "tabTransport": "Transportation",
+  "tabMulti": "Multi-Stop",
+  "tabAirbnb": "Vacation Rental",
+  "otherTabTitle": "Multiple stops & rentals",
+  "otherTabBody": "Travelling to more than one place, or staying at a vacation rental? Build a custom multi-stop route with us.",
+  "otherTabBtn": "Back to transfers",
+
+  "pressKicker": "Trusted & certified by",
+
+  "sumEdit": "Edit search",
+  "assistTitle": "Need assistance?",
+  "assistBody": "Our team answers 24/7 in English & Spanish.",
+  "assistChat": "Chat on WhatsApp"
 }

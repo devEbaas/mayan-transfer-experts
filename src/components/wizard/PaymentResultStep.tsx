@@ -27,7 +27,7 @@ export default function PaymentResultStep() {
       >
         {icon.glyph}
       </div>
-      <h1 className="font-display font-extrabold leading-[1.05] m-0 mb-3.5" style={{ fontSize: 'clamp(30px,4.6vw,46px)', letterSpacing: '-.8px' }}>
+      <h1 className="font-display leading-[1.05] m-0 mb-3.5" style={{ fontSize: 'clamp(30px,4.6vw,46px)', letterSpacing: '-.8px' }}>
         {t(`result_${outcome}_title`)}
       </h1>
       <p className="text-[17px] leading-relaxed text-text-secondary max-w-[440px] mx-auto m-0 mb-[26px]">
@@ -36,7 +36,7 @@ export default function PaymentResultStep() {
       {folio && (
         <div className="inline-flex items-center gap-2.5 bg-white border border-border rounded-[14px] px-[22px] py-3.5 mb-[30px]">
           <span className="text-[12px] font-bold text-text-muted uppercase tracking-[.5px]">{t('done_ref')}</span>
-          <span className="font-display text-xl font-extrabold text-primary tracking-[.5px]">{folio}</span>
+          <span className="font-sans text-xl font-extrabold text-primary tracking-[.5px]">{folio}</span>
         </div>
       )}
       <div className="flex items-center justify-center gap-3 flex-wrap">
@@ -44,7 +44,7 @@ export default function PaymentResultStep() {
           <button
             onClick={handleRetry}
             className="bg-primary text-white border-none rounded-[15px] px-8 py-4 text-base font-bold cursor-pointer hover:bg-teal-hover transition-colors"
-            style={{ boxShadow: '0 14px 30px -10px rgba(31,95,192,.5)' }}
+            style={{ boxShadow: '0 14px 30px -10px rgba(14,140,130,.5)' }}
           >
             {t('result_retry_btn')}
           </button>
