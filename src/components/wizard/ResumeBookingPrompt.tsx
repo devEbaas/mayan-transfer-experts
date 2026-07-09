@@ -29,7 +29,7 @@ export default function ResumeBookingPrompt() {
   return (
     <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/40 px-4 pb-4 sm:pb-0">
       <div className="bg-white rounded-[20px] p-6 max-w-[420px] w-full shadow-xl">
-        <h2 className="font-display font-extrabold text-xl text-navy mb-2">{t('resumeTitle')}</h2>
+        <h2 className="font-sans font-extrabold text-xl text-navy mb-2">{t('resumeTitle')}</h2>
         <p className="text-sm text-text-secondary mb-5">{t('resumeBody')}</p>
         <div className="flex gap-3">
           <button

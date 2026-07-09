@@ -9,8 +9,8 @@ export default function PaymentSection() {
     <section className="bg-navy-dark text-white">
       <div className="max-w-[1080px] mx-auto px-6 py-[74px]">
         <div data-reveal className="text-center max-w-[640px] mx-auto mb-[38px]">
-          <div className="text-[13px] font-extrabold tracking-[3px] uppercase text-gold mb-3.5">{t('home_payKicker')}</div>
-          <h2 className="font-display font-extrabold leading-[1.06] m-0 mb-3 text-white" style={{ fontSize: 'clamp(28px,4vw,40px)', letterSpacing: '-.6px' }}>
+          <div className="text-[13px] font-extrabold tracking-[3px] uppercase text-teal mb-3.5">{t('home_payKicker')}</div>
+          <h2 className="font-display leading-[1.06] m-0 mb-3 text-white" style={{ fontSize: 'clamp(28px,4vw,40px)', letterSpacing: '-.6px' }}>
             {t('home_payTitle')}
           </h2>
           <p className="text-[16.5px] leading-[1.65] text-footer-text m-0">{t('home_payBody')}</p>
@@ -24,7 +24,7 @@ export default function PaymentSection() {
               className="bg-white rounded-[14px] px-[30px] py-[18px] min-w-[120px] flex items-center justify-center transition-transform duration-300 hover:-translate-y-1"
               style={{ boxShadow: '0 10px 26px -16px rgba(0,0,0,.5)' }}
             >
-              <span className="font-display font-extrabold text-[19px]" style={{ letterSpacing: '-.3px', color: m.color }}>{m.label}</span>
+              <span className="font-sans font-extrabold text-[19px]" style={{ letterSpacing: '-.3px', color: m.color }}>{m.label}</span>
             </div>
           ))}
         </div>

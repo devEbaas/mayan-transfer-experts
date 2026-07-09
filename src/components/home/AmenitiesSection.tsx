@@ -9,7 +9,7 @@ export default function AmenitiesSection() {
       <div className="max-w-[1080px] mx-auto px-6 py-[74px]">
         <div data-reveal className="text-center max-w-[640px] mx-auto mb-11">
           <div className="text-[13px] font-extrabold tracking-[3px] uppercase text-primary mb-3.5">{t('home_amenKicker')}</div>
-          <h2 className="font-display font-extrabold leading-[1.06] m-0 mb-3 text-navy" style={{ fontSize: 'clamp(28px,4vw,40px)', letterSpacing: '-.6px' }}>
+          <h2 className="font-display leading-[1.06] m-0 mb-3 text-navy" style={{ fontSize: 'clamp(28px,4vw,40px)', letterSpacing: '-.6px' }}>
             {t('home_amenTitle')}
           </h2>
           <p className="text-[16.5px] leading-[1.65] text-text-secondary m-0">{t('home_amenSub')}</p>
@@ -23,7 +23,7 @@ export default function AmenitiesSection() {
               style={{ cursor: 'default' }}
             >
               <div className="w-[52px] h-[52px] rounded-[14px] bg-info-bg flex items-center justify-center text-2xl mb-4">{a.icon}</div>
-              <div className="font-display font-bold text-lg text-navy mb-[7px]" style={{ letterSpacing: '-.2px' }}>{a.title}</div>
+              <div className="font-sans font-bold text-lg text-navy mb-[7px]" style={{ letterSpacing: '-.2px' }}>{a.title}</div>
               <div className="text-[14.5px] leading-relaxed text-text-secondary">{a.desc}</div>
             </div>
           ))}

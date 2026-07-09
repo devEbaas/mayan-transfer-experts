@@ -12,9 +12,9 @@ export default function ExtrasStep() {
     i18n.language === 'es' ? item.labelEs : item.labelEn;
 
   return (
-    <section className="max-w-[720px] mx-auto px-6 pt-[46px] pb-6" style={{ animation: 'ctview .45s cubic-bezier(.16,1,.3,1) both' }}>
+    <section className="pt-1 pb-6" style={{ animation: 'ctview .45s cubic-bezier(.16,1,.3,1) both' }}>
       <div className="text-[13px] font-extrabold tracking-[3px] uppercase text-primary mb-3">{t('e_eyebrow')}</div>
-      <h1 className="font-display font-extrabold leading-[1.04] m-0 mb-3" style={{ fontSize: 'clamp(28px,4.2vw,42px)', letterSpacing: '-.6px' }}>
+      <h1 className="font-display leading-[1.04] m-0 mb-3" style={{ fontSize: 'clamp(28px,4.2vw,42px)', letterSpacing: '-.6px' }}>
         {t('e_title')}
       </h1>
       <p className="text-sm text-text-muted mb-[26px]">{t('extrasSkip')}</p>
@@ -40,7 +40,7 @@ export default function ExtrasStep() {
                 <button
                   onClick={() => setExtraQty(item.id, Math.min(item.maxQty, qty + 1))}
                   className="w-[38px] h-[38px] rounded-full border-none bg-primary text-white text-xl font-bold cursor-pointer leading-none hover:bg-teal-hover transition-colors flex items-center justify-center"
-                  style={{ boxShadow: '0 8px 18px -8px rgba(31,95,192,.55)' }}
+                  style={{ boxShadow: '0 8px 18px -8px rgba(14,140,130,.55)' }}
                 >
                   +
                 </button>

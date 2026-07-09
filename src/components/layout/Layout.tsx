@@ -2,8 +2,11 @@ import type { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import ActionBar from './ActionBar';
-import { useBookingStore } from '@/store/bookingStore';
+import Stepper from './Stepper';
+import { useBookingStore, type Screen } from '@/store/bookingStore';
 import { useReveal } from '@/hooks/useReveal';
+
+const STEPPER_SCREENS: Screen[] = ['pax', 'vehicle', 'extras', 'details', 'pay'];
 
 export default function Layout({ children }: { children: ReactNode }) {
   const screen = useBookingStore((s) => s.screen);
@@ -11,8 +14,9 @@ export default function Layout({ children }: { children: ReactNode }) {
   useReveal();
 
   return (
-    <div className="min-h-screen flex flex-col bg-bg text-navy" style={{ fontFamily: "'Figtree',system-ui,-apple-system,sans-serif" }}>
+    <div className="min-h-screen flex flex-col bg-bg text-navy" style={{ fontFamily: "'Hanken Grotesk',system-ui,-apple-system,sans-serif" }}>
       <Header />
+      {STEPPER_SCREENS.includes(screen) && <Stepper />}
       <main className="flex-1 w-full">{children}</main>
       {screen !== 'done' && <ActionBar />}
       {screen === 'route' && <Footer />}

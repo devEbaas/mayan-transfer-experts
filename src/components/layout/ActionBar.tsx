@@ -76,7 +76,7 @@ export default function ActionBar() {
   return (
     <div
       className="sticky bottom-0 z-40 border-t border-border"
-      style={{ background: 'rgba(247,243,232,.92)', backdropFilter: 'saturate(150%) blur(10px)' }}
+      style={{ background: 'rgba(245,242,236,.92)', backdropFilter: 'saturate(150%) blur(10px)' }}
     >
       <div className="max-w-[1100px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
         {showBack ? (
@@ -94,7 +94,7 @@ export default function ActionBar() {
           {showPrice && selectedVehicle && (
             <div className="text-right">
               <div className="text-[11px] font-extrabold uppercase tracking-[.5px] text-text-light">{t('total')}</div>
-              <div className="font-display text-2xl font-extrabold text-navy tracking-tight leading-none" style={{ letterSpacing: '-.5px' }}>
+              <div className="font-sans text-2xl font-extrabold text-navy tracking-tight leading-none" style={{ letterSpacing: '-.5px' }}>
                 {formatPrice(bestPrice(selectedVehicle) + extrasTotal, selectedVehicle.currency)}
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function ActionBar() {
             <button
               onClick={validateAndAdvance}
               className="bg-primary text-white border-none rounded-[14px] px-8 py-4 text-base font-bold cursor-pointer hover:bg-teal-hover transition-colors"
-              style={{ boxShadow: '0 14px 30px -10px rgba(31,95,192,.5)' }}
+              style={{ boxShadow: '0 14px 30px -10px rgba(14,140,130,.5)' }}
             >
               {t('continue')} →
             </button>

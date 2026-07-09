@@ -16,15 +16,15 @@ export default function DetailsStep() {
   const showDepartureFlight = trip.tripType === 'round' && (destination?.isAirport ?? false);
 
   return (
-    <section className="max-w-[760px] mx-auto px-6 pt-[46px] pb-6" style={{ animation: 'ctview .45s cubic-bezier(.16,1,.3,1) both' }}>
+    <section className="pt-1 pb-6" style={{ animation: 'ctview .45s cubic-bezier(.16,1,.3,1) both' }}>
       <div className="text-[13px] font-extrabold tracking-[3px] uppercase text-primary mb-3">{t('d_eyebrow')}</div>
-      <h1 className="font-display font-extrabold leading-[1.04] m-0 mb-[26px]" style={{ fontSize: 'clamp(28px,4.2vw,42px)', letterSpacing: '-.6px' }}>
+      <h1 className="font-display leading-[1.04] m-0 mb-[26px]" style={{ fontSize: 'clamp(28px,4.2vw,42px)', letterSpacing: '-.6px' }}>
         {t('d_title')}
       </h1>
 
       {/* Passenger info */}
       <div className="bg-white border border-border rounded-[20px] p-[26px] mb-[18px]">
-        <div className="font-display font-bold text-[17px] text-navy mb-[18px]">👤 {t('coPassenger')}</div>
+        <div className="font-sans font-bold text-[17px] text-navy mb-[18px]">👤 {t('coPassenger')}</div>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 mb-4">
           <div>
             <label className="block text-[13px] font-bold text-text-muted mb-[7px]">{t('coName')}</label>
@@ -110,9 +110,9 @@ export default function DetailsStep() {
               onClick={() => setContactPref('whatsapp')}
               className="flex-1 rounded-xl px-3 py-3.5 text-sm font-bold cursor-pointer transition-colors"
               style={{
-                border: `1.5px solid ${contactPref === 'whatsapp' ? '#1F5FC0' : '#D8E1EC'}`,
-                background: contactPref === 'whatsapp' ? '#E9F1FC' : '#fff',
-                color: contactPref === 'whatsapp' ? '#1A4F9E' : '#465064',
+                border: `1.5px solid ${contactPref === 'whatsapp' ? '#0E8C82' : '#dfe4ea'}`,
+                background: contactPref === 'whatsapp' ? '#eef7f5' : '#fff',
+                color: contactPref === 'whatsapp' ? '#0E8C82' : '#475563',
               }}
             >
               💬 {t('coWhatsapp')}
@@ -121,9 +121,9 @@ export default function DetailsStep() {
               onClick={() => setContactPref('email')}
               className="flex-1 rounded-xl px-3 py-3.5 text-sm font-bold cursor-pointer transition-colors"
               style={{
-                border: `1.5px solid ${contactPref === 'email' ? '#1F5FC0' : '#D8E1EC'}`,
-                background: contactPref === 'email' ? '#E9F1FC' : '#fff',
-                color: contactPref === 'email' ? '#1A4F9E' : '#465064',
+                border: `1.5px solid ${contactPref === 'email' ? '#0E8C82' : '#dfe4ea'}`,
+                background: contactPref === 'email' ? '#eef7f5' : '#fff',
+                color: contactPref === 'email' ? '#0E8C82' : '#475563',
               }}
             >
               ✉ {t('coEmailPref')}
@@ -135,7 +135,7 @@ export default function DetailsStep() {
       {/* Flight info — only for legs that actually touch the airport */}
       {(showArrivalFlight || showDepartureFlight) && (
         <div className="bg-white border border-border rounded-[20px] p-[26px] mb-[18px]">
-          <div className="font-display font-bold text-[17px] text-navy mb-1.5">✈️ {t('flightTitle')}</div>
+          <div className="font-sans font-bold text-[17px] text-navy mb-1.5">✈️ {t('flightTitle')}</div>
           <div className="text-[13.5px] text-text-muted mb-[18px] leading-relaxed">{t('flightSub')}</div>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[22px]">
             {showArrivalFlight && (
