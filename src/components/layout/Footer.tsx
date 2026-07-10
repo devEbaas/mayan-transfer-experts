@@ -44,7 +44,7 @@ export default function Footer() {
           <div className="text-[13.5px] leading-[1.9] text-footer-text">
             <div>📞 +1 346 420 5083</div>
             <div>Toll Free 1 (800) 905-5513</div>
-            <div>✉ reservaweb@cancuntransferhotels.com</div>
+            <div>✉ reservaweb@mayantransferexperts.com</div>
           </div>
           <div className="flex gap-2.5 mt-[18px] flex-wrap">
             <span className="rounded-lg px-3 py-2 text-[11.5px] font-bold text-[#cdd7e2]" style={{ background: '#1B1F26' }}>{t('footBadgeSsl')}</span>

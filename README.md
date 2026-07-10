@@ -1,6 +1,6 @@
-# cancun-transfer-web
+# mayan-transfer-web
 
-Sitio web público de reservas de traslados turísticos para **Cancun Transfer Hotels**.  
+Sitio web público de reservas de traslados turísticos para **Mayan Transfer Experts**.  
 Permite a los turistas buscar, reservar y pagar traslados desde/hacia el Aeropuerto Internacional de Cancún hacia hoteles y destinos de la Riviera Maya.
 
 ---
@@ -231,7 +231,7 @@ El workflow `.github/workflows/deploy.yml` corre en cada push a `main`:
 
 ## Referencia de diseño
 
-- Sitio de referencia (flujo y UX): cancuntransferhotels.com
+- Sitio de referencia (flujo y UX): mayantransferexperts.com
 - Colores de marca: `#0057A8` (azul) · `#00A896` (teal)
 - Fuentes: system-ui / Segoe UI (sin dependencia externa)
 - Breakpoints responsivos: mobile-first (`sm:640` `md:768` `lg:1024` `xl:1280`)

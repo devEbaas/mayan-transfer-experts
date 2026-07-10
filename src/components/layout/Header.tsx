@@ -19,7 +19,7 @@ export default function Header() {
         <div className="max-w-[1100px] mx-auto px-6 py-2 flex items-center justify-between gap-5 flex-wrap">
           <div className="flex items-center gap-[22px] flex-wrap">
             <span className="flex items-center gap-[7px]"><span className="text-teal">●</span> Cancún +1 346 420 5083</span>
-            <span className="flex items-center gap-[7px]">✉ reservaweb@cancuntransferhotels.com</span>
+            <span className="flex items-center gap-[7px]">✉ reservaweb@mayantransferexperts.com</span>
           </div>
           <div className="flex items-center gap-[18px] flex-wrap">
             <span className="text-[#9fb0c0]">USA/Canada Toll Free 1 (800) 905-5513</span>
